@@ -23,8 +23,9 @@
     "morgan": "~1.0.0"
   },
   "devDependencies": {
-    "gulp": "~3.8.10",
-    "gulp-sass": "~1.2.4",
-    "gulp-concat": "~2.4.3"
+    "gulp": "^3.8.10",
+    "gulp-concat": "^2.4.3",
+    "gulp-sass": "^1.2.4",
+    "jasmine": "^2.1.1"
   }
 }
