@@ -78,4 +78,9 @@ com_crashlytics_export_strings.xml
 crashlytics.properties
 crashlytics-build.properties
 
+### CodeKit template
+# General CodeKit files to ignore
+config.codekit
+/min
+
 
