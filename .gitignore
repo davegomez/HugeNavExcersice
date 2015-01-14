@@ -29,7 +29,6 @@ node_modules
 
 # Users Environment Variables
 .lock-wscript
-.gitignore
 
 ### JetBrains template
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm
