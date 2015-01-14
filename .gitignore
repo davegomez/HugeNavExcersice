@@ -84,3 +84,9 @@ config.codekit
 /min
 
 
+
+### Sass template
+.sass-cache
+*.css.map
+
+
