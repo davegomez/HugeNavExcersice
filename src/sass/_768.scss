@@ -1,0 +1,119 @@
+body {
+  @include fonts(Galaxie, 14px, 24px);
+}
+
+.menu-push {
+  overflow-x: hidden;
+  position: relative;
+  left: 0;
+}
+
+.navbar {
+  background-color: #008B8B;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  width: 224px;
+  z-index: 1000;
+}
+
+.navbar-close {
+  left: -240px;
+
+}
+
+.navbar-close.navbar-open {
+  left: 0px;
+}
+
+.mobile-bar {
+  background-color: $magenta;
+  height: 60px;
+  width: 100%;
+  position: absolute;
+  z-index: 20;
+}
+
+.headline-wrapper {
+  padding-top: 60px;
+}
+
+.headline-img {
+  max-width: 100%;
+  min-height: 240px;
+}
+
+.headline {
+  @include fonts(HUGE, 44px, 48px);
+  margin: 41px 24px;
+}
+
+.headline-text {
+  width: 100%;
+}
+
+.article-text {
+  margin: 0 24px 24px;
+}
+
+.overlay:after {
+  content: "";
+  display: block;
+  position: fixed;
+  top: 0px;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+  background-color: $translucent;
+}
+
+.copyright {
+  @include fonts("Helvetica Neue", 12px, 16px);
+}
+
+/**
+ * Animated Burger Menu
+ * @author: Bruno Cartaxeiro
+ * @link: http://codepen.io/BRN/pen/tjwzl
+ */
+
+.hamburger {
+  background: transparent;
+  height: 20px;
+  left: 24px;
+  position: relative;
+  transition: left .5s ease-in;
+  width: 24px;
+    &:before,
+    &:after {
+      backface-visibility: hidden;
+      background: rgba(#ffffff, 1.0);
+      content: "";
+      height: 4px;
+      transition: 0.75s;
+      width: 24px;
+    }
+    &:before {
+      box-shadow: rgba(#ffffff, 1.0) 0 8px 0 0;
+      position: absolute;
+      top: 20px;
+    }
+    &:after {
+      position: absolute;
+      top: 36px;
+    }
+}
+
+.hamburger-active {
+  left: calc(100% - 53px);
+  &:before {
+    box-shadow: transparent 0 0 0 0;
+    top: 24px;
+    transform: rotate(585deg);
+  }
+  &:after {
+    top: 24px;
+    transform: rotate(675deg);
+  }
+}
