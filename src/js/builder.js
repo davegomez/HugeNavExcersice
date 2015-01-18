@@ -17,9 +17,12 @@
     return a;
   };
 
-  var buildListItem = function(listSpec) {
+  var buildListItem = function(listSpec, primary) {
     var li = document.createElement('li');
     li.appendChild(buildAnchor(listSpec));
+    if (primary) {
+      li.classList.add('primary-item');
+    }
 
     return li;
   };
@@ -27,9 +30,12 @@
   var buildList = function(listItems) {
     var ul = document.createElement('ul');
     listItems.forEach(function(item) {
-      var li = buildListItem(item);
+      var li;
       if (item.items && item.items.length > 0) {
+        li = buildListItem(item, true);
         li.appendChild(buildList(item.items));
+      } else {
+        li = buildListItem(item, false);
       }
 
       ul.appendChild(li);

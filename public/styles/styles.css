@@ -1,1 +1,268 @@
-@font-face{font-family:'HUGEAvantGardeBold';src:url("/fonts/huge_agb_v5-webfont.eot?#iefix") format("embedded-opentype"),url("/fonts/huge_agb_v5-webfont.woff") format("woff"),url("/fonts/huge_agb_v5-webfont.ttf") format("truetype"),url("/fonts/huge_agb_v5-webfont.svg#svgFontName") format("svg")}@font-face{font-family:'Galaxie';src:url("/fonts/GalaxieCopernicus-Book.eot?#iefix") format("embedded-opentype"),url("/fonts/GalaxieCopernicus-Book.woff") format("woff"),url("/fonts/GalaxieCopernicus-Book.svg#svgFontName") format("svg");font-style:normal;font-weight:normal}@font-face{font-family:'Galaxie';src:url("/fonts/GalaxieCopernicus-BookItalic.eot?#iefix") format("embedded-opentype"),url("/fonts/GalaxieCopernicus-BookItalic.woff") format("woff"),url("/fonts/GalaxieCopernicus-BookItalic.svg#svgFontName") format("svg");font-style:italic;font-weight:normal}
+@font-face {
+  font-family: 'HUGE';
+  src: url("../fonts/huge_agb_v5-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/huge_agb_v5-webfont.woff") format("woff"), url("../fonts/huge_agb_v5-webfont.ttf") format("truetype"), url("../fonts/huge_agb_v5-webfont.svg#svgFontName") format("svg");
+}
+@font-face {
+  font-family: 'Galaxie';
+  src: url("../fonts/GalaxieCopernicus-Book.eot?#iefix") format("embedded-opentype"), url("../fonts/GalaxieCopernicus-Book.woff") format("woff"), url("../fonts/GalaxieCopernicus-Book.svg#svgFontName") format("svg");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'Galaxie';
+  src: url("../fonts/GalaxieCopernicus-BookItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/GalaxieCopernicus-BookItalic.woff") format("woff"), url("../fonts/GalaxieCopernicus-BookItalic.svg#svgFontName") format("svg");
+  font-style: italic;
+  font-weight: normal;
+}
+/**
+ * Variables
+ */
+/**
+ * Mixins
+ */
+body {
+  font-family: Galaxie, Helvetica, Arial, sans-serif;
+  font-size: 24px;
+  line-height: 36px;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.primary-nav {
+  font-family: HUGE, Helvetica, Arial, sans-serif;
+  font-size: 21px;
+  line-height: 48px;
+}
+
+.secondary-nav {
+  font-family: Galaxie, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 48px;
+}
+
+.headline-text {
+  font-family: HUGE, Helvetica, Arial, sans-serif;
+  font-size: 120px;
+  line-height: 132px;
+}
+
+.headline-img {
+  width: 100%;
+  height: auto;
+}
+
+section {
+  max-width: 968px;
+  margin: auto;
+}
+section p {
+  text-align: justify;
+  -webkit-hyphens: auto;
+     -moz-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+}
+
+@media only screen and (max-width: 768px) and (max-width: 1024px) {
+  body {
+    font-family: Galaxie, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  .lock {
+    overflow: hidden;
+  }
+
+  .unlock {
+    overflow: scroll;
+  }
+
+  .content {
+    left: 0;
+    position: relative;
+    overflow-x: hidden;
+    -webkit-transition: left 0.3s ease-in;
+            transition: left 0.3s ease-in;
+  }
+  .content.push-toright {
+    left: calc(100% - 72px);
+  }
+
+  .navbar {
+    background-color: white;
+    color: black;
+    height: 100%;
+    position: fixed;
+    padding-top: 64px;
+    width: calc(100% - 72px);
+    z-index: 20;
+    left: calc(72px - 100%);
+    -webkit-transition: left 0.3s ease-in;
+            transition: left 0.3s ease-in;
+  }
+  .navbar.navbar-open {
+    left: 0;
+  }
+  .navbar a {
+    color: inherit;
+    padding-left: 24px;
+    text-decoration: none;
+  }
+  .navbar ul {
+    list-style: none;
+  }
+
+  .primary-nav {
+    padding-left: 0;
+  }
+  .primary-nav li {
+    padding-left: 0;
+  }
+
+  .secondary-nav {
+    display: none;
+    padding-left: 0;
+  }
+  .secondary-nav li {
+    padding-left: 0;
+  }
+  .secondary-nav.show-list {
+    display: list-item;
+  }
+
+  li:hover {
+    background-color: #ebebeb;
+  }
+  li:hover.off:hover {
+    background-color: white;
+  }
+
+  .show-secondary-nav {
+    display: inherit;
+  }
+
+  .mobile-bar {
+    background-color: #ec008c;
+    height: 60px;
+    width: 100%;
+    position: absolute;
+    z-index: 20;
+  }
+  .mobile-bar > img {
+    height: 20px;
+    left: calc(24px - 100%);
+    position: absolute;
+    top: 20px;
+    width: 50px;
+    -webkit-transition: left 0.3s ease-in;
+            transition: left 0.3s ease-in;
+  }
+  .mobile-bar > .show-logo {
+    left: 24px;
+  }
+
+  .headline-img-wrap {
+    padding-top: 60px;
+  }
+
+  .headline-img {
+    max-width: 100%;
+    min-height: 240px;
+  }
+
+  .headline-text-wrap {
+    width: 380px;
+  }
+
+  .headline-text {
+    font-size: 44px;
+    line-height: 48px;
+    margin: 41px 24px;
+  }
+
+  .article-text {
+    margin: 0 24px 24px;
+  }
+
+  .overlay:after {
+    content: "";
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .copyright {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  /**
+   * Animated Burger Menu
+   * @author: Bruno Cartaxeiro
+   * @link: http://codepen.io/BRN/pen/tjwzl
+   */
+  .hamburger {
+    background: transparent;
+    height: 20px;
+    left: 24px;
+    top: 20px;
+    position: relative;
+    -webkit-transition: left 0.3s ease-in;
+            transition: left 0.3s ease-in;
+    width: 24px;
+  }
+  .hamburger:before, .hamburger:after {
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    background: white;
+    content: "";
+    height: 4px;
+    -webkit-transition: 0.47s;
+            transition: 0.47s;
+    width: 100%;
+  }
+  .hamburger:before {
+    box-shadow: white 0 8px 0 0;
+    position: absolute;
+  }
+  .hamburger:after {
+    position: absolute;
+    top: 16px;
+  }
+
+  .hamburger-active {
+    left: calc(100% - 48px);
+  }
+  .hamburger-active:before {
+    box-shadow: transparent 0 0 0 0;
+    top: 8px;
+    -webkit-transform: rotate(585deg);
+        -ms-transform: rotate(585deg);
+            transform: rotate(585deg);
+  }
+  .hamburger-active:after {
+    top: 8px;
+    -webkit-transform: rotate(675deg);
+        -ms-transform: rotate(675deg);
+            transform: rotate(675deg);
+  }
+}
+@media only screen and (max-width: 320px) and (max-width: 480px) {
+  .headline-text {
+    font-size: 38px;
+    line-height: 46px;
+    margin: 40px 24px;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

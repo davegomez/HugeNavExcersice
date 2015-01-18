@@ -1,0 +1,22 @@
+/**
+ * Variables
+ */
+
+// HUGE Colors
+$magenta: rgba(#ec008c, 1.0);
+$lightGrey: rgba(#eeeeee, 1.0);
+$translucent: rgba(#000000, 0.5);
+
+// Base Fonts
+$fonts: Helvetica, Arial, sans-serif;
+
+/**
+ * Mixins
+ */
+
+// Fonts with (Family Name, Size(px), Line Height(px))
+@mixin fonts($name, $size, $height) {
+    font-family: $name, $fonts;
+    font-size: $size;
+    line-height: $height;
+}

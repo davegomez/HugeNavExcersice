@@ -1,3 +1,19 @@
 @import "typography";
+@import "functions";
 @import "base";
-@import "mobile";
+
+@media only screen {
+    @media (max-width: 768px) {
+        @media (max-width: 1024px) {
+            @import "768";
+        }
+    }
+}
+
+@media only screen {
+    @media (max-width: 320px) {
+        @media (max-width: 480px) {
+            @import "320";
+        }
+    }
+}

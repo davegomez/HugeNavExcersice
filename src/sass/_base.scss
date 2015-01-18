@@ -1,0 +1,34 @@
+body {
+    @include fonts(Galaxie, 24px, 36px);
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.primary-nav {
+    @include fonts(HUGE, 21px, 48px);
+}
+
+.secondary-nav {
+    @include fonts(Galaxie, 16px, 48px);
+}
+
+.headline-text {
+    @include fonts(HUGE, 120px, 132px);
+}
+
+.headline-img {
+    width: 100%;
+    height: auto;
+}
+
+section {
+    max-width: 968px;
+    margin: auto;
+    & p {
+        text-align: justify;
+        hyphens: auto;
+    }
+}
