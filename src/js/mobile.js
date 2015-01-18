@@ -15,23 +15,16 @@
 
   var toggleMenu = function() {
     var event = document.getElementById('toggle');
-    event.addEventListener('click', animate, true);
+    event.addEventListener('click', animate, false);
   };
 
   var showList = function(event) {
-    var lists = document.querySelectorAll('.secondary-nav');
-    lists = Array.prototype.slice.call(lists, 0);
-    lists.forEach(function(elem) {
-      elem.classList.remove('show-list');
-    });
     event.target.nextSibling.classList.toggle('show-list');
+    event.path[1].classList.toggle('off');
+    event.target.classList.toggle('off');
   };
 
   var dropMenu = function() {
-    var items = document.querySelectorAll('.primary-item');
-    console.log(items);
-    //items = Array.prototype.slice.call(items, 0);
-    for (var i = 0, length = items.length; i < length; i++) {
-      items[i].addEventListener('click', showList, true);
-    }
+    var mainList = document.querySelector('.primary-nav');
+    mainList.addEventListener('click', showList, false);
   };
