@@ -1,6 +1,6 @@
 
   var animate = function(event) {
-    var body = document.querySelector('body'),
+    var body = document.body,
         nav = document.querySelector('.navbar'),
         logo = document.querySelector('img:first-child'),
         content = document.querySelector('.content');
@@ -13,18 +13,26 @@
     nav.classList.toggle('unlock');
   };
 
-  var toggleMenu = function() {
-    var event = document.getElementById('toggle');
-    event.addEventListener('click', animate, false);
-  };
-
   var showList = function(event) {
-    event.target.nextSibling.classList.toggle('show-list');
-    event.path[1].classList.toggle('off');
-    event.target.classList.toggle('off');
+    if (event.target.tagName === 'LI') {
+      event.preventDefault();
+      var link = event.target.querySelector('a');
+      link.click();
+      return;
+    }
+    var sibiling = event.target.nextSibling;
+    if (sibiling) {
+      sibiling.classList.toggle('show-list');
+      event.path[1].classList.toggle('off');
+      event.target.classList.toggle('off');
+    }
   };
 
-  var dropMenu = function() {
+  var initDropDownMenu = function() {
+    "use strict";
+    var event = document.getElementById('toggle');
     var mainList = document.querySelector('.primary-nav');
+
+    event.addEventListener('click', animate, false);
     mainList.addEventListener('click', showList, false);
-  };
+  }
