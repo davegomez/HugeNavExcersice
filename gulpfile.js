@@ -16,7 +16,7 @@ gulp.task('sass', function() {
 });
 
 gulp.task('concat:dist', function() {
-  // gulp.src(['src/js/ajax.js', 'src/js/builder.js', 'src/js/init.js'])
+  // gulp.src(['src/js/get-json.js', 'src/js/menu-builder.js', 'src/js/init.js'])
   gulp.src('src/js/{,*/}*.js')
     .pipe(concat('scripts.js', {process: function(src) { return (src.trim() + '\n').replace(/(^|\n)[ \t]*('use strict'|"use strict");?\s*/g, '$1'); }}))
     .pipe(concat.header('(function (window, document, undefined) {\n\'use strict\';\n\n'))
