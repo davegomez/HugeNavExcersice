@@ -1,5 +1,11 @@
+/* Headline Text Fix */
 .headline-text {
     font-size: 38px;
     line-height: 46px;
     margin: 40px 24px;
+}
+
+/* State Indicator - Mobile (Small) */
+.state-indicator {
+    z-index: 3;
 }

@@ -1,5 +1,153 @@
+/* =====================================================================
+     Main HTML Elements styles
+   =====================================================================  */
+
 body {
     @include fonts(Galaxie, 24px, 36px);
+}
+
+a {
+    color: $black;
+    text-decoration: none;
+}
+
+ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+li {
+    white-space: nowrap;
+    padding: 0 24px;
+    cursor: hand;
+}
+
+/* =====================================================================
+     Main Content Styles
+   =====================================================================  */
+
+header {
+    align-content: center;
+    display: flex;
+    margin-bottom: 60px;
+    position: relative;
+    .headline-img {
+        display: table-cell;
+        height: auto;
+        text-align: center;
+        vertical-align: middle;
+        width: 100%;
+    }
+    .headline-text-wrapper {
+        color: $white;
+        position: absolute;
+        top: 29.2%;
+        width: 100%;
+        z-index: 10;
+    }
+    .headline-text {
+        @include fonts(HUGE, 120px, 132px);
+        margin: 0 auto;
+        width: 803px;
+    }
+}
+
+.content {
+    &.active:after {
+        content: "";
+        display: block;
+        position: fixed;
+        top: 72px;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: 10;
+        background-color: $translucent;
+    }
+}
+
+section {
+    max-width: 968px;
+    margin: auto;
+    p {
+        text-align: justify;
+        hyphens: auto;
+    }
+}
+
+/* =====================================================================
+   Navigation Bar styles
+   =====================================================================  */
+
+/* Primary Navigation Bar Styles */
+.primary-nav {
+    @include fonts(HUGE, 21px, 48px);
+    align-items: center;
+    background-color: $magenta;
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    max-width: 1280px;
+    padding: 0;
+    .active {
+        background-color: $white;
+        > a {
+            color: $black;
+        }
+    }
+    > li {
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+    > li > a {
+        color: #fff;
+    }
+    > li:hover {
+        background-color: $white;
+    }
+    > li:hover > a {
+        color: $black;
+    }
+}
+
+.logo {
+    align-items: center;
+    display: flex;
+    &:hover {
+        background-color: $magenta !important;
+    }
+    img {
+        min-width: 60px;
+    }
+}
+
+.primary-item {
+    position: relative;
+}
+
+/* Secondary Navigation Bar Styles */
+.secondary-nav {
+    @include fonts(Galaxie, 16px, 48px);
+    background-color: $white;
+    left: 0;
+    max-height: 0;
+    overflow-y: hidden;
+    position: absolute;
+    top: 72px;
+    transition: max-height 0.3s ease-in-out;
+    z-index: 20;
+    & li:hover {
+        background-color: $lightGrey;
+        & > a {
+            color: $magenta;
+        }
+    }
+    &.active {
+        max-height: 560px;
+    }
+    & a {
+        color: $black;
+    }
 }
 
 .container {
@@ -7,28 +155,17 @@ body {
     margin: 0 auto;
 }
 
-.primary-nav {
-    @include fonts(HUGE, 21px, 48px);
+/* The mobile navigation bar and the footer must be hidden while the user is
+   using a desktop */
+.copyright {
+    display: none;
 }
 
-.secondary-nav {
-    @include fonts(Galaxie, 16px, 48px);
+.mobile-bar {
+    display: none;
 }
 
-.headline-text {
-    @include fonts(HUGE, 120px, 132px);
-}
-
-.headline-img {
-    width: 100%;
-    height: auto;
-}
-
-section {
-    max-width: 968px;
-    margin: auto;
-    & p {
-        text-align: justify;
-        hyphens: auto;
-    }
+/* State Indicator - Desktop */
+.state-indicator {
+    z-index: 1;
 }

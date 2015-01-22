@@ -1,6 +1,11 @@
 @import "typography";
 @import "functions";
-@import "base";
+
+@media only screen {
+    @media (min-width: 768px) {
+        @import "base";
+    }
+}
 
 @media only screen {
     @media (max-width: 768px) {
@@ -14,6 +19,25 @@
     @media (max-width: 320px) {
         @media (max-width: 480px) {
             @import "320";
+        }
+    }
+}
+
+// Fix headline text before getting to the next media query
+@media only screen {
+    @media (min-width: 768px) {
+        @media (max-width: 1024px) {
+            header {
+                .headline-text-wrapper {
+                    top: 24%;
+                }
+                .headline-text {
+                    font-size: 100px;
+                    line-height: 116px;
+                    margin: 0 auto;
+                    width: 672px;
+                }
+            }
         }
     }
 }
